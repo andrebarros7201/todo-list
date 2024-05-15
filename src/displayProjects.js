@@ -27,7 +27,7 @@ const displayProjects = (projectList) => {
     addTodoItem.textContent = "Add Todo Item";
 
     addTodoItem.addEventListener("click", () => {
-      addTodoItemForm(project);
+      addTodoItemForm(projectList, project);
     });
 
     topDiv.appendChild(addTodoItem);

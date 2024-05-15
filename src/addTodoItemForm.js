@@ -1,4 +1,7 @@
-const displayForm = (project) => {
+import { addTodoItem } from "./addTodoItem";
+import { displayProjects } from "./displayProjects";
+
+const displayForm = (projectList, project) => {
   const main = document.querySelector("#main");
 
   const form = document.createElement("dialog");
@@ -59,7 +62,18 @@ const displayForm = (project) => {
   const buttonSubmit = document.createElement("button");
   buttonSubmit.textContent = "Submit";
   buttonSubmit.classList.add("form-button-submit");
-  buttonSubmit.addEventListener("click", () => {});
+  buttonSubmit.addEventListener("click", (e) => {
+    e.preventDefault();
+    addTodoItem(
+      projectList,
+      project,
+      inputTitle.value,
+      inputDesc.value,
+      inputDate.value,
+      inputPriority.value
+    );
+    form.close();
+  });
 
   inputPriority.appendChild(optionHigh);
   inputPriority.appendChild(optionMedium);
@@ -87,8 +101,8 @@ const displayForm = (project) => {
   form.showModal();
 };
 
-const addTodoItemForm = (project) => {
-  displayForm(project);
+const addTodoItemForm = (projectList, project) => {
+  displayForm(projectList, project);
 };
 
 export { addTodoItemForm };
