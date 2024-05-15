@@ -5,7 +5,7 @@ import { displayProjects } from "./displayProjects";
 
 let projectList = [];
 
-for (let i = 0; i < 3; i++) {
+for (let i = 0; i < 5; i++) {
   const title = "Lorem Ipsum";
   const description = "Lorem Ipsum...";
   const date = Date.UTC(2024, 5, 15);
@@ -18,7 +18,5 @@ for (let i = 0; i < 3; i++) {
 
   projectList.push(projectItem);
 }
-
-console.log(projectList);
 
 displayProjects(projectList);

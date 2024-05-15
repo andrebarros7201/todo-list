@@ -16,6 +16,23 @@ body {
   flex-direction: column;
 }
 
+.project > .top-div {
+  display: flex;
+  gap: 1rem;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.project:not(:first-child) {
+  border-top: 2px solid black;
+}
+
+.add-todo-item {
+  padding: 2px 4px;
+  height: fit-content;
+}
+
 .projectTitle {
   font-weight: bolder;
 }

@@ -5,11 +5,23 @@ const displayProjects = (projectList) => {
     const divProject = document.createElement("div");
     divProject.classList.add("project");
 
+    const topDiv = document.createElement("div");
+    topDiv.classList.add("top-div");
+
     const projectTitle = document.createElement("h2");
     projectTitle.classList.add("project-title");
     projectTitle.textContent = `${element.title}`;
 
-    divProject.appendChild(projectTitle);
+    topDiv.appendChild(projectTitle);
+
+    const addTodoItem = document.createElement("button");
+    addTodoItem.classList.add("add-todo-item");
+    addTodoItem.textContent = "Add Todo Item";
+
+    topDiv.appendChild(addTodoItem);
+
+    const divTodoItems = document.createElement("div");
+    divTodoItems.classList.add("div-todo-items");
 
     element.todoItems.forEach((todoItem) => {
       const divTodoItem = document.createElement("div");
@@ -36,8 +48,11 @@ const displayProjects = (projectList) => {
       divTodoItem.appendChild(itemDate);
       divTodoItem.appendChild(itemPriority);
 
-      divProject.appendChild(divTodoItem);
+      divTodoItems.appendChild(divTodoItem);
     });
+
+    divProject.appendChild(topDiv);
+    divProject.appendChild(divTodoItems);
 
     contentDiv.appendChild(divProject);
   });
