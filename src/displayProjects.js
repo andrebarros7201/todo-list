@@ -1,4 +1,5 @@
 import { addTodoItemForm } from "./addTodoItemForm";
+import { removeTodoItem } from "./removeTodoItem";
 
 const displayProjects = (projectList) => {
   const contentDiv = document.querySelector("#main");
@@ -53,7 +54,7 @@ const displayProjects = (projectList) => {
     middleDiv.appendChild(priority);
 
     const bottomDiv = document.createElement("div");
-    bottomDiv.classList.add("div-todo-items");
+    bottomDiv.classList.add("bottom");
 
     //Create a row for each todoItem inside the project
     project.todoItems.forEach((todoItem) => {
@@ -76,10 +77,18 @@ const displayProjects = (projectList) => {
       itemPriority.classList.add("item-priority");
       itemPriority.textContent = `${todoItem.priority}`;
 
+      const buttonDelete = document.createElement("button");
+      buttonDelete.classList.add("button-delete-todo-item");
+      buttonDelete.textContent = "Delete";
+      buttonDelete.addEventListener("click", () => {
+        removeTodoItem(projectList, project, todoItem);
+      });
+
       rowTodoItem.appendChild(itemTitle);
       rowTodoItem.appendChild(itemDesc);
       rowTodoItem.appendChild(itemDate);
       rowTodoItem.appendChild(itemPriority);
+      rowTodoItem.appendChild(buttonDelete);
 
       bottomDiv.appendChild(rowTodoItem);
     });
