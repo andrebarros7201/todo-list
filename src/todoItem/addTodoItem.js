@@ -1,5 +1,5 @@
-import { displayProjects } from "./displayProjects";
-import { toDoItem } from "./todoItem";
+import { displayProjects } from "../displayProjects";
+import { toDoItem } from "../todoItem";
 
 const addTodoItem = (
   projectList,

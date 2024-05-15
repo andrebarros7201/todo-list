@@ -1,5 +1,5 @@
-import { addTodoItemForm } from "./addTodoItemForm";
-import { removeTodoItem } from "./removeTodoItem";
+import { addTodoItemForm } from "./todoItem/addTodoItemForm";
+import { removeTodoItem } from "./todoItem/removeTodoItem";
 
 const displayProjects = (projectList) => {
   const contentDiv = document.querySelector("#main");
