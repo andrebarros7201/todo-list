@@ -2,9 +2,11 @@ const displayProjects = (projectList) => {
   const contentDiv = document.querySelector("#main");
 
   projectList.forEach((element) => {
+    //Div for each project
     const divProject = document.createElement("div");
     divProject.classList.add("project");
 
+    //Top div inside the project
     const topDiv = document.createElement("div");
     topDiv.classList.add("top-div");
 
@@ -20,6 +22,7 @@ const displayProjects = (projectList) => {
 
     topDiv.appendChild(addTodoItem);
 
+    //Middle div inside the project
     const middleDiv = document.createElement("div");
     middleDiv.classList.add("middle");
     const title = document.createElement("h3");
@@ -42,9 +45,10 @@ const displayProjects = (projectList) => {
     const bottomDiv = document.createElement("div");
     bottomDiv.classList.add("div-todo-items");
 
+    //Create a row for each todoItem inside the project
     element.todoItems.forEach((todoItem) => {
-      const divTodoItem = document.createElement("div");
-      divTodoItem.classList.add("todo-item");
+      const rowTodoItem = document.createElement("div");
+      rowTodoItem.classList.add("todo-item");
 
       const itemTitle = document.createElement("h3");
       itemTitle.classList.add("item-title");
@@ -62,18 +66,20 @@ const displayProjects = (projectList) => {
       itemPriority.classList.add("item-priority");
       itemPriority.textContent = `${todoItem.priority}`;
 
-      divTodoItem.appendChild(itemTitle);
-      divTodoItem.appendChild(itemDesc);
-      divTodoItem.appendChild(itemDate);
-      divTodoItem.appendChild(itemPriority);
+      rowTodoItem.appendChild(itemTitle);
+      rowTodoItem.appendChild(itemDesc);
+      rowTodoItem.appendChild(itemDate);
+      rowTodoItem.appendChild(itemPriority);
 
-      bottomDiv.appendChild(divTodoItem);
+      bottomDiv.appendChild(rowTodoItem);
     });
 
+    //Append each div to a container div
     divProject.appendChild(topDiv);
     divProject.appendChild(middleDiv);
     divProject.appendChild(bottomDiv);
 
+    //Append that container div to the main div
     contentDiv.appendChild(divProject);
   });
 };
