@@ -15,6 +15,7 @@ for (let i = 0; i < 5; i++) {
 
   let projectItem = project(`Project ${i + 1}`);
   projectItem.todoItems.push(item);
+  projectItem.todoItems.push(item);
 
   projectList.push(projectItem);
 }
