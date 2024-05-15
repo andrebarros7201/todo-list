@@ -62,3 +62,34 @@ body {
 .item-priority {
   grid-area: priority;
 }
+
+/* Only applies when the dialog is open
+Display flex wasn't letting me close the dialog  */
+.form-add-todo-item[open] {
+  display: flex;
+  flex-flow: column wrap;
+  width: 30vw;
+  border: 2px solid black;
+}
+
+.form-add-todo-item[open] > label {
+  margin-top: 1rem;
+}
+
+.form-add-todo-item[open] > .form-button-submit {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  color: white;
+  background-color: cornflowerblue;
+  border: 0;
+  border-radius: 0.5rem;
+}
+
+.form-add-todo-item[open] > .form-button-close {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  color: white;
+  background-color: crimson;
+  border: 0;
+  border-radius: 0.5rem;
+}

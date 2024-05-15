@@ -1,7 +1,13 @@
+import { addTodoItemForm } from "./addTodoItemForm";
+
 const displayProjects = (projectList) => {
   const contentDiv = document.querySelector("#main");
 
-  projectList.forEach((element) => {
+  while (contentDiv.firstChild) {
+    contentDiv.removeChild(contentDiv.firstChild);
+  }
+
+  projectList.forEach((project) => {
     //Div for each project
     const divProject = document.createElement("div");
     divProject.classList.add("project");
@@ -12,13 +18,17 @@ const displayProjects = (projectList) => {
 
     const projectTitle = document.createElement("h2");
     projectTitle.classList.add("project-title");
-    projectTitle.textContent = `${element.title}`;
+    projectTitle.textContent = `${project.title}`;
 
     topDiv.appendChild(projectTitle);
 
     const addTodoItem = document.createElement("button");
     addTodoItem.classList.add("add-todo-item");
     addTodoItem.textContent = "Add Todo Item";
+
+    addTodoItem.addEventListener("click", () => {
+      addTodoItemForm(project);
+    });
 
     topDiv.appendChild(addTodoItem);
 
@@ -46,7 +56,7 @@ const displayProjects = (projectList) => {
     bottomDiv.classList.add("div-todo-items");
 
     //Create a row for each todoItem inside the project
-    element.todoItems.forEach((todoItem) => {
+    project.todoItems.forEach((todoItem) => {
       const rowTodoItem = document.createElement("div");
       rowTodoItem.classList.add("todo-item");
 
