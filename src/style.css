@@ -76,18 +76,18 @@ body {
 
 /* Only applies when the dialog is open
 Display flex wasn't letting me close the dialog  */
-.form-add-todo-item[open] {
+.form[open] {
   display: flex;
   flex-flow: column wrap;
   width: 30vw;
   border: 2px solid black;
 }
 
-.form-add-todo-item[open] > label {
+.form[open] > label {
   margin-top: 1rem;
 }
 
-.form-add-todo-item[open] > .form-button-submit {
+.form[open] > .form-button-submit {
   margin-top: 1rem;
   padding: 0.5rem 1rem;
   color: white;
@@ -96,7 +96,7 @@ Display flex wasn't letting me close the dialog  */
   border-radius: 0.5rem;
 }
 
-.form-add-todo-item[open] > .form-button-close {
+.form[open] > .form-button-close {
   margin-top: 1rem;
   padding: 0.5rem 1rem;
   color: white;

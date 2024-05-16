@@ -4,7 +4,7 @@ const addProjectForm = (projectList) => {
   const main = document.querySelector("#main");
 
   const form = document.createElement("dialog");
-  form.classList.add("form-add-project");
+  form.classList.add("form");
 
   const buttonClose = document.createElement("button");
   buttonClose.classList.add("form-button-close");
