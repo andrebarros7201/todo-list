@@ -1,5 +1,6 @@
 import { addTodoItemForm } from "./todoItem/addTodoItemForm";
 import { removeTodoItem } from "./todoItem/removeTodoItem";
+import { removeProject } from "./projectItem/removeProject";
 
 const displayProjects = (projectList) => {
   const contentDiv = document.querySelector("#main");
@@ -32,6 +33,16 @@ const displayProjects = (projectList) => {
     });
 
     topDiv.appendChild(addTodoItem);
+
+    const removeProjectButton = document.createElement("button");
+    removeProjectButton.classList.add("add-todo-item");
+    removeProjectButton.textContent = "Delete Project";
+
+    removeProjectButton.addEventListener("click", () => {
+      removeProject(projectList, project);
+    });
+
+    topDiv.appendChild(removeProjectButton);
 
     //Middle div inside the project
     const middleDiv = document.createElement("div");
