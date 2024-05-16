@@ -1,5 +1,4 @@
 import { addTodoItem } from "./addTodoItem";
-import { displayProjects } from "../displayProjects";
 
 const displayForm = (projectList, project) => {
   const main = document.querySelector("#main");

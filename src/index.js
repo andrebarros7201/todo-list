@@ -1,7 +1,8 @@
 import "./style.css";
-import { toDoItem } from "./todoItem";
-import { project } from "./projects";
+import { toDoItem } from "./todoItem/todoItem";
+import { project } from "./projectItem/projects";
 import { displayProjects } from "./displayProjects";
+import { addProject } from "./projectItem/addProject";
 
 let projectList = [];
 
@@ -21,3 +22,4 @@ for (let i = 0; i < 5; i++) {
 }
 
 displayProjects(projectList);
+addProject(projectList);
